@@ -1,7 +1,10 @@
 package ua.edu.ucu.stream;
 
-import ua.edu.ucu.function.*;
-
+import ua.edu.ucu.function.IntPredicate;
+import ua.edu.ucu.function.IntBinaryOperator;
+import ua.edu.ucu.function.IntConsumer;
+import ua.edu.ucu.function.IntToIntStreamFunction;
+import ua.edu.ucu.function.IntUnaryOperator;
 import java.util.LinkedList;
 
 public class AsIntStream implements IntStream {
@@ -37,7 +40,7 @@ public class AsIntStream implements IntStream {
     @Override
     public Double average() {
         checkIfEmpty();
-        return (double) (sum() / this.size);
+        return (sum() / (double) this.size);
     }
 
     @Override
@@ -50,9 +53,9 @@ public class AsIntStream implements IntStream {
         return extreme((int) Double.POSITIVE_INFINITY, -1);
     }
 
-    private Integer extreme(int initial_value, int comparator) {
+    private Integer extreme(int initialValue, int comparator) {
         checkIfEmpty();
-        int extreme = initial_value;
+        int extreme = initialValue;
         for (int i = 0; i < this.size; i++) {
             Integer value = this.values.get(i);
             if (Double.compare(value, extreme) == comparator) {
