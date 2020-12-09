@@ -2,6 +2,8 @@ package ua.edu.ucu.stream;
 
 import ua.edu.ucu.function.*;
 
+import java.util.Collection;
+
 public interface IntStream {
 
     Double average();
@@ -25,4 +27,6 @@ public interface IntStream {
     Integer sum();
 
     int[] toArray();
+
+    Collection<? extends Integer> getValues();
 }
