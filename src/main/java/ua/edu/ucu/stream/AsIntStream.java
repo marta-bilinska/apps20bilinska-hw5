@@ -5,6 +5,7 @@ import ua.edu.ucu.function.IntBinaryOperator;
 import ua.edu.ucu.function.IntConsumer;
 import ua.edu.ucu.function.IntToIntStreamFunction;
 import ua.edu.ucu.function.IntUnaryOperator;
+
 import java.util.LinkedList;
 
 public class AsIntStream implements IntStream {

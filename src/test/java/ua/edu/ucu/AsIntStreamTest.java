@@ -149,12 +149,7 @@ public class AsIntStreamTest {
         intStream.forEach(x -> str.append(x));
         assertEquals("-10123", str.toString());
     }
-    @Test
-    public void testConstructor() {
-        IntStream stream = AsIntStream.of();
-        long len = stream.count();
-        assertEquals(len, 0);
-    }
+
 
 
 }
